@@ -240,6 +240,28 @@ public class TestBuyCredit {
     }
 
     @Test
+    void shoulEmptyCvs() {
+        val cardNumber = DataHelper.getFirstCard();
+        val month = DataHelper.getValidMonth();
+        val year = DataHelper.getValidYear();
+        val owner = DataHelper.getValidOwnerCard();
+        val cvs = DataHelper.getEmptyCvs();
+        servicePage.fillFields(cardNumber, month, year, owner, cvs);
+        servicePage.errorInvalidFormat();
+    }
+
+    @Test
+    void shoulZeroCvs() {
+        val cardNumber = DataHelper.getFirstCard();
+        val month = DataHelper.getValidMonth();
+        val year = DataHelper.getValidYear();
+        val owner = DataHelper.getValidOwnerCard();
+        val cvs = DataHelper.getZeroCvs();
+        servicePage.fillFields(cardNumber, month, year, owner, cvs);
+        servicePage.errorInvalidFormat();
+    }
+
+    @Test
     void shoudlInvalidOwnerCardMinSymbols() {
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();

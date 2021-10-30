@@ -108,5 +108,12 @@ public class DataHelper {
         return "1";
     }
 
+    public static String getEmptyCvs() {
+        return "";
+    }
+
+    public static String getZeroCvs() {
+        return "000";
+    }
 
 }

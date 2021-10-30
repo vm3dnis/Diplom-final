@@ -11,20 +11,17 @@ sourceCompatibility = 11
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
 
-configurations {
-    testCompile
-}
-
 allure {
     autoconfigure = true
     version = '2.13.9'
 
     useJUnit5 {
-        version = '2.13.9'
+        version = '2.13.3'
     }
 }
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
@@ -39,9 +36,8 @@ dependencies {
     testImplementation group: 'org.postgresql', name: 'postgresql', version: '42.2.14'
     testImplementation 'com.github.javafaker:javafaker:1.0.2'
     testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.30'
-    testImplementation group: 'io.qameta.allure', name: 'allure-rest-assured', version: '2.16.0'
-    testImplementation 'io.qameta.allure:allure-selenide:2.16.0'
-    testImplementation group: 'io.qameta.allure', name: 'allure-junit5', version: '2.16.0'
+    testImplementation group: 'io.qameta.allure', name: 'allure-rest-assured', version: '2.14.0'
+    testImplementation 'io.qameta.allure:allure-selenide:2.14.0'
 }
 
 test {

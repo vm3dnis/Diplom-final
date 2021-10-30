@@ -40,7 +40,7 @@ public class DBHelper {
         val statusSql = "SELECT status FROM payment_entity ORDER BY created DESC LIMIT 1";
         try (Connection connection = getConnection()) {
             val statusSt = connection.createStatement();
-            try (val rs = statusSt.executeQuery(statusSql)) {
+                  try (val rs = statusSt.executeQuery(statusSql)) {
                 if (rs.next()) {
                     val status = rs.getString(1);
                     return status;

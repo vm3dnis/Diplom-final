@@ -12,6 +12,7 @@ import static com.codeborne.selenide.Configuration.startMaximized;
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
 public class TestBuy {
     ServicePage servicePage = new ServicePage();
 
@@ -236,6 +237,28 @@ public class TestBuy {
         val year = DataHelper.getValidYear();
         val owner = DataHelper.getValidOwnerCard();
         val cvs = DataHelper.getInvalidCvs();
+        servicePage.fillFields(cardNumber, month, year, owner, cvs);
+        servicePage.errorInvalidFormat();
+    }
+
+    @Test
+    void shoulEmptyCvs() {
+        val cardNumber = DataHelper.getFirstCard();
+        val month = DataHelper.getValidMonth();
+        val year = DataHelper.getValidYear();
+        val owner = DataHelper.getValidOwnerCard();
+        val cvs = DataHelper.getEmptyCvs();
+        servicePage.fillFields(cardNumber, month, year, owner, cvs);
+        servicePage.errorInvalidFormat();
+    }
+
+    @Test
+    void shoulZeroCvs() {
+        val cardNumber = DataHelper.getFirstCard();
+        val month = DataHelper.getValidMonth();
+        val year = DataHelper.getValidYear();
+        val owner = DataHelper.getValidOwnerCard();
+        val cvs = DataHelper.getZeroCvs();
         servicePage.fillFields(cardNumber, month, year, owner, cvs);
         servicePage.errorInvalidFormat();
     }

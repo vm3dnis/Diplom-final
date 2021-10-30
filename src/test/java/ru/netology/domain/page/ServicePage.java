@@ -8,8 +8,7 @@ import java.time.Duration;
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.withText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.*;
 
 public class ServicePage {
     private SelenideElement buttonBuy = $("button:nth-child(3)");

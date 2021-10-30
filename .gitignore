@@ -24,7 +24,6 @@ out/
 /dist/
 /nbdist/
 /.nb-gradle/
-/aqa-shop.jar
 
 ### VS Code ###
 .vscode/
@@ -42,3 +41,4 @@ out/
 !gradle/wrapper/gradle-wrapper.jar
 !src/main/**
 !src/test/**
+!artifacts

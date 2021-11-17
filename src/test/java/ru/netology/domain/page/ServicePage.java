@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class ServicePage {
-    private SelenideElement buttonBuy = $("button:nth-child(3)");
+    private SelenideElement buttonBuy = $$("[class=button button_size_m button_theme_alfa-on-white]").get(0);
     private SelenideElement buttonBuyCredit = $$("[class='button button_view_extra button_size_m button_theme_alfa-on-white']").get(0);
     private SelenideElement buttonResume = $$("button").find(exactText("Продолжить"));
     private SelenideElement fieldCardNumber = $("[placeholder='0000 0000 0000 0000']");
